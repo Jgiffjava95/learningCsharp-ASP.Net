@@ -57,6 +57,7 @@ public class Functions
 	private void viewList(List<item> shoppingList)
 	{
 		int itemListNum = 1;
+		
 
 		Console.WriteLine("Item List");
 		Console.WriteLine("-------------");
@@ -65,7 +66,7 @@ public class Functions
 		{
 			foreach (item i in shoppingList)
 			{
-				Console.WriteLine((itemListNum++) + ". " + i.getName() + " x " + i.getQuantity());
+				Console.WriteLine((itemListNum++) + ". " + i.name + " x " + i.quantity);
 			}
 		}
 		else
@@ -99,7 +100,7 @@ public class Functions
 			else
 			{
 
-				bool result = int.TryParse(stringQuan, out quan); //Test if stringQuan is a number once converted or a string.
+				bool result = int.TryParse(stringQuan, out quan); 
 
 				if (result == false)
 				{
@@ -119,11 +120,11 @@ public class Functions
 			{
 				foreach (item i in shoppingList)
 				{
-					if (i.getName().ToUpper() == upper)  //Iterate through list to find the item with the same name as upperLower.
+					if (i.name.ToUpper() == upper)
 					{
-						int newQuan = i.getQuantity() + quan;
-						Console.WriteLine("Item " + i.getName() + " quantity updated from " + i.getQuantity() + " to " + newQuan + ".");
-						i.setQuantity(newQuan);
+						int newQuan = i.quantity + quan;
+						Console.WriteLine("Item " + i.name + " quantity updated from " + i.quantity + " to " + newQuan + ".");
+						i.quantity = newQuan;
 						return;
 					}
 				}
@@ -169,10 +170,10 @@ public class Functions
 
 					foreach (item i in shoppingList)
 					{
-						if (i.getName().ToUpper() == upper)  //Iterate through list to find the item with the same name as upperLower.
+						if (i.name.ToUpper() == upper)
 						{
 							shoppingList.Remove(i);
-							Console.WriteLine(i.getName() + " Deleted from list.");
+							Console.WriteLine(i.name + " Deleted from list.");
 							return;
 						}
 						else

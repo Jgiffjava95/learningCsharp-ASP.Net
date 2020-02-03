@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Class1 : Functions
+public class MainClass : Functions
 {
 		static void Main(string[] args)
         {
